@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام إدارة مكتبة المدرسة</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="شعار المكتبة">
+            <h1>نظام إدارة المكتبة</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" id="home-link">الرئيسية</a></li>
+                <li><a href="#" id="books-link">الكتب</a></li>
+                <li><a href="#" id="borrow-link">الإعارة</a></li>
+                <li><a href="#" id="return-link">الإرجاع</a></li>
+                <li><a href="#" id="login-link">تسجيل الدخول</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- الصفحة الرئيسية -->
+        <section id="home-section" class="active">
+            <h2>مرحبًا بكم في نظام مكتبة المدرسة</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>الكتب المتاحة</h3>
+                    <p id="available-books">120</p>
+                </div>
+                <div class="stat-card">
+                    <h3>كتب معارة</h3>
+                    <p id="borrowed-books">45</p>
+                </div>
+                <div class="stat-card">
+                    <h3>المستخدمون</h3>
+                    <p id="total-users">230</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- صفحة الكتب -->
+        <section id="books-section">
+            <h2>قائمة الكتب</h2>
+            <div class="search-bar">
+                <input type="text" id="book-search" placeholder="ابحث عن كتاب...">
+                <button id="search-btn">بحث</button>
+            </div>
+            <table id="books-table">
+                <thead>
+                    <tr>
+                        <th>رقم الكتاب</th>
+                        <th>العنوان</th>
+                        <th>المؤلف</th>
+                        <th>التصنيف</th>
+                        <th>الحالة</th>
+                        <th>الإجراءات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- سيتم ملؤها بواسطة الجافاسكريبت -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- صفحة الإعارة -->
+        <section id="borrow-section">
+            <h2>نموذج إعارة كتاب</h2>
+            <form id="borrow-form">
+                <div class="form-group">
+                    <label for="user-id">رقم المستخدم:</label>
+                    <input type="text" id="user-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="book-id">رقم الكتاب:</label>
+                    <input type="text" id="book-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="borrow-date">تاريخ الإعارة:</label>
+                    <input type="date" id="borrow-date" required>
+                </div>
+                <div class="form-group">
+                    <label for="return-date">موعد الإرجاع:</label>
+                    <input type="date" id="return-date" required>
+                </div>
+                <button type="submit">تأكيد الإعارة</button>
+            </form>
+        </section>
+
+        <!-- صفحة الإرجاع -->
+        <section id="return-section">
+            <h2>نموذج إرجاع كتاب</h2>
+            <form id="return-form">
+                <div class="form-group">
+                    <label for="return-user-id">رقم المستخدم:</label>
+                    <input type="text" id="return-user-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="return-book-id">رقم الكتاب:</label>
+                    <input type="text" id="return-book-id" required>
+                </div>
+                <div class="form-group">
+                    <label for="actual-return-date">تاريخ الإرجاع الفعلي:</label>
+                    <input type="date" id="actual-return-date" required>
+                </div>
+                <button type="submit">تأكيد الإرجاع</button>
+            </form>
+        </section>
+
+        <!-- صفحة تسجيل الدخول -->
+        <section id="login-section">
+            <h2>تسجيل الدخول</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="email">البريد الإلكتروني (هوتميل):</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">كلمة المرور:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="user-type">نوع المستخدم:</label>
+                    <select id="user-type" required>
+                        <option value="">اختر نوع المستخدم</option>
+                        <option value="student">طالب</option>
+                        <option value="teacher">معلم</option>
+                        <option value="staff">إداري</option>
+                    </select>
+                </div>
+                <button type="submit">تسجيل الدخول</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2023 نظام إدارة مكتبة المدرسة. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
